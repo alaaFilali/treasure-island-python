@@ -41,7 +41,7 @@ else:
     do this
             </code></pre>
             <p>
-                لذينا الكلمة 
+                لدينا الكلمة 
                 if 
                 ثم بعدها الشرط الخاص بنا ثم نقطتين فوق بعض لنبين ان الكود الموالي 
                 داخل عبارة الشرط فاذا تحقق الشرط اي انه يساوي 
@@ -94,17 +94,123 @@ else:
                 فراغات او ببساطة الضغط على زر 
                 tab
                 ونتيجة الكود سوف تكون مختلفة بناءا على الطول المدخل
+                فاذا كان الطول 
+                130
+                هذه هي النتيجة: 
             </p>
             <pre><code>
 Welcome to the rollercoaster
 What is your height in cm: 130
 You can ride the rollercoaster!
             </code></pre>
+            <p>
+                اما اذا كان 
+                100
+                فهذه هي النتيجة: 
+            </p>
             <pre><code>
 Welcome to the rollercoaster
 What is your height in cm: 100
 Sorry, you have to grow taller before you can ride.
             </code></pre>
+            <p>
+                استطعنا التحكم في مسار البرنامج من خلال استعمال العبارات الشرطية 
+                اي ان البرنامج الخاص بنا سوف يفعل شيء مختلف بناءا على مدخل المستخدم
+            </p>
+            <p>
+                في الشرط الذي وضعناه سابقا لكي يتحقق يجب ان يكون اكبر تماما من 
+                120
+                اي ان المستخدم اذا ادخل القيمة 
+                120
+                فهي ليست اكبر من 
+                120
+                اي ان التعليمات التي سوف تنفذ هي تعليمات ال 
+                else
+            </p>
+            <pre><code>
+Welcome to the rollercoaster
+What is your height in cm: 120
+Sorry, you have to grow taller before you can ride.
+            </code></pre>
+            <p>
+                اما اذا اردنا 
+                120
+                سم وما فوق فعلينا استعمال 
+                اكبر او تساوي بدل من استعمال علامة اكبر فقط هكذا: 
+            </p>
+            <pre><code>
+print("Welcome to the rollercoaster")
+height = int(input("What is your height in cm: "))
+
+if height >= 120:
+    print("You can ride the rollercoaster!")
+else:
+    print("Sorry, you have to grow taller before you can ride.")
+            </code></pre>
+            <pre><code>
+Welcome to the rollercoaster
+What is your height in cm: 120
+You can ride the rollercoaster!
+            </code></pre>
+            <p>
+                بالاضافة الى اكبر من واكبر او يساوي هناك عمليات اخرى يمكنك استعمالها: 
+            </p>
+            <table border="2px">
+                <tr>
+                    <td>العملية</td>
+                    <td>المعنى</td>
+                </tr>
+                <tr>
+                    <td>></td>
+                    <td>اكبر من</td>
+                </tr>
+                <tr>
+                    <td><</td>
+                    <td>اصغر من</td>
+                </tr>
+                <tr>
+                    <td>>=</td>
+                    <td>اكبر او تساوي</td>
+                </tr>
+                <tr>
+                    <td><=</td>
+                    <td>اصغر او تساوي</td>
+                </tr>
+                <tr>
+                    <td>==</td>
+                    <td>تساوي</td>
+                </tr>
+                <tr>
+                    <td>!=</td>
+                    <td>لا تساوي</td>
+                </tr>
+            </table>
+            <p>
+                مثلا لو اردنا بيع التذاكر فقط للناس الذين طولهم يساوي بالضبط 
+                120
+                سم يمكننا فعل ذلك هكذا:
+            </p>
+            <pre><code>
+if height == 120:
+    print("You can ride the rollercoaster!")
+else:
+    print("Sorry, you have to grow taller before you can ride.")
+            </code></pre>
+            <p>
+                فان كان الطول الذي ادخلته 
+                121 
+                فسوف يقول لي لايمكنك الركوب
+            </p>
+            <pre><code>
+Welcome to the rollercoaster
+What is your height in cm: 121
+Sorry, you have to grow taller before you can ride.
+            </code></pre>
+            <p>
+                الكثير من المبتدئين يخلطون بين استعمال علامة المساوات الواحدة و 
+                علامتين مساوات فالاولى لكي نخزن قيمة ما في متغير مثلا بينما الثانية 
+                نستعملها لكي نتحقق من مساوات الطرف الاول مع الثاني
+            </p>
         </div>
     </div>
 </body>
