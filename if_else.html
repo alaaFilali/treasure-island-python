@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>
+        العبارة الشرطية
+        if else
+    </title>
+</head>
+
+<body>
+    <div class="book-page">
+        <h1 class="book-title">
+            العبارة الشرطية
+            if else
+        </h1>
+        <div class="content">
+            <p>
+                لو لاحظت من قبل عندما كنت تستحم ونسيت الحنفية مفتوحة فان الماء من حوض
+                الاستحمام لا يتدفق خارج الحوض اطلاقا وهذا بسبب وجود منفذ اخراج الماء 
+                بحيث اذا وصل الماء الى مستوى عالي فانه لا يتدفق خارج الحوض ولكن يمر
+                من خلال منفذ اخراج الماء وبذلك استطعنا تفادي مشكلة نسيان الماء وضياعه
+            </p>
+            <p>
+                يمكننا تمثيل سيناريو حوض الاستحمام كالتالي بحيث نفتح الحنفية فيتدفق الماء 
+                فاذا وصل الماء الى مستوى 
+                80
+                سم فهذا يعني مرور الماء خلال فتحة اخراج الماء والا فسوف نكمل عملية سيلان الماء
+                وهذا النوع من الشرط هو العبارة الشرطية 
+                if else 
+                بحيث بناءا على شرطا ما سوف نفعل شيء
+                او شيء اخر ويمكننا تمثيل ذلك في بايثون كالتالي: 
+            </p>
+            <pre><code>
+if condition:
+    do this
+else:
+    do this
+            </code></pre>
+            <p>
+                لذينا الكلمة 
+                if 
+                ثم بعدها الشرط الخاص بنا ثم نقطتين فوق بعض لنبين ان الكود الموالي 
+                داخل عبارة الشرط فاذا تحقق الشرط اي انه يساوي 
+                True
+                فان التعليمات داخل عبارة 
+                if 
+                سوف تنفذ والا اي ان الشرط لم يتحقق سوف ننفذ التعليمات داخل عبارة 
+                else
+            </p>
+            <p>
+                فاذا اردنا تمثيل مثال حوض الاستحمام السابق سوف يكون كالتالي: 
+            </p>
+            <pre><code>
+water_level = 50
+if water_level > 80:
+    print("Drain Water")
+else:
+    print("Continue")
+            </code></pre>
+            <p>
+                الان اليك مثال اخر. لقد حصلت على وظيفة جديدة وهي كتابة برنامج يقوم باستبدال
+                بائع التذاكر لركوب الافعوانة في مدينة الملاهي ولكي يستطيع شخص ما ان يشتري 
+                تذكرة يجب ان يكون طوله فوف 
+                120
+                سم اذن علينا ان نتحقق من طول الشخص قبل ان نبيع له تذكرة 
+            </p>
+            <p>
+                اولا سوف ارحب بالمستخدم ثم سوف اسأله عن طوله بالسم واحوله الى 
+                int
+            </p>
+            <pre><code>
+print("Welcome to the rollercoaster")
+height = int(input("What is your height in cm: "))
+            </code></pre>
+            <p>
+                ثم سوف اتحقق ان كان الطول الذي ادخله المستخدم اكبر من 
+                120
+                سم فان كان كذلك سوف ابيع له تذكرة والا فلا
+            </p>
+            <pre><code>
+if height > 120:
+    print("You can ride the rollercoaster!")
+else:
+    print("Sorry, you have to grow taller before you can ride.")
+            </code></pre>
+            <p>
+                لاحظ انه عندما اضع التعليمات التي سوف تنفذ بناءا على الشرط فانا اضيف فراغا 
+                قبل السطر وهذا لابين انها داخل عبارة الشرط والفراغ هنا مهم جدا ويقدر ب 
+                4
+                فراغات او ببساطة الضغط على زر 
+                tab
+                ونتيجة الكود سوف تكون مختلفة بناءا على الطول المدخل
+            </p>
+            <pre><code>
+Welcome to the rollercoaster
+What is your height in cm: 130
+You can ride the rollercoaster!
+            </code></pre>
+            <pre><code>
+Welcome to the rollercoaster
+What is your height in cm: 100
+Sorry, you have to grow taller before you can ride.
+            </code></pre>
+        </div>
+    </div>
+</body>
+
+</html>
