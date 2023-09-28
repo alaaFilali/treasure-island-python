@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>تمرين الاعداد الزوجية والفردية</title>
+</head>
+
+<body>
+    <div class="book-page">
+        <h1 class="book-title">تمرين الاعداد الزوجية والفردية</h1>
+        <div class="content">
+            <p>
+                التعليمات:
+            </p>
+            <p>
+                اكتب برنامج الذي يخبرك ما اذا كان العدد الذي ادخلته عدد زوجي او فردي,
+                الاعداد الزوجية هي الاعداد التي تقبل القسمة على 
+                2
+                بدون باقي مثلا العدد 
+                86
+                عدد زوجي لان 
+                86
+                قسمة  
+                2
+                النتيجة هي 
+                43
+                بدون باقي اي لايوجد اعداد بعد الفاصلة
+                اما 
+                59
+                هو عدد فردي لان 
+                قسمته على 
+                2
+                النتيجة هي 
+                36.875
+                اذن هناك باقي
+            </p>
+            <p>
+                لارجاع الباقي من اي قسمة في بايثون نستعمل الرمز 
+                %
+                مثال 6 عدد زوجي اي ان باقي قسمته على 
+                2
+                هو 
+                0
+            </p>
+            <pre><code>
+print(6 % 2)
+            </code></pre>
+            <pre><code>
+0
+            </code></pre>
+            <p>
+                النتيجة النهائية للبرنامج سوف تكون كالتالي في حال العدد كان زوجي: 
+            </p>
+            <pre><code>
+Which number do you want to check? 56
+This is an even number.
+            </code></pre>
+            <p>
+                اما ان كان فردي: 
+            </p>
+            <pre><code>
+Which number do you want to check? 35
+This is an odd number.
+            </code></pre>
+            <p>
+                اليك هذا السطر البرمجي لكي تبدأ منه وحظا موفقا في حل التمرين.
+            </p>
+            <pre><code>
+number = int(input("Which number do you want to check? "))
+            </code></pre>
+            <p>
+                الحل: 
+            </p>
+            <p>
+                علامة ال 
+                modulo
+                ترجع لنا باقي القسمة ونحن نعلم ان باقي قسمة الاعداد الزوجية على 
+                2
+                دائما هو 
+                0
+                اي بدون باقي 
+                اما ان كان فردي فباقي القسمة على 
+                2
+                دائما سوف يعطينا 
+                1
+                وسوف نستعمل هذه المعلومة في البرنامج الخاص بنا 
+                بحيث سوف نتحقق من ان كان باقي قسمة العدد الذي ادخله المستخدم
+                يساوي 
+                0
+                في تلك الحالة ذلك العدد هو زوجي 
+                اما غير ذلك اي انه عدد فردي 
+            </p>
+            <pre><code>
+number = int(input("Which number do you want to check? "))
+
+if number % 2 == 0:
+    print("This is an even number.")
+else:
+    print("This is an odd number.")
+            </code></pre>
+        </div>
+    </div>
+</body>
+
+</html>
