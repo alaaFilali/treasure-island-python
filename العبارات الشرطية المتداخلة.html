@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>العبارات الشرطية المتداخلة</title>
+</head>
+
+<body>
+    <div class="book-page">
+        <h1 class="book-title">العبارات الشرطية المتداخلة</h1>
+        <div class="content">
+            <p>
+                استعملنا في الدروس السابقة عبارة 
+                if else 
+                للتحقق من الطول الشخص ان كان فوق 
+                120
+                وبناءا على ذلك نبيع له تذكرة ركوب الافعوانة ولكن بالاضافة الى الطول 
+                هناك ايضا شرط اخر علينا التحقق منه وهو العمر 
+                فاذا كان عمر الشخص فوق 
+                18
+                فسوف يدفع 
+                12
+                دولار 
+                اما اذا كان عمره 
+                18
+                او اقل فسوف يدفع 
+                7
+                دولار فقط اذن كيف يمكننا تمثيل هذا الشرط الاضافي في الكود الخاص بنا؟
+            </p>
+            <p>
+                نستطيع استعمال عبارة 
+                if else 
+                متداخلة هكذا: 
+            </p>
+            <pre><code>
+if condition:
+    if condition_2:
+        do this
+    else:
+        do this
+else:
+    do this
+            </code></pre>
+            <p>
+                بمعنى نتحقق من طول الشخص فاذا كان اكبر من 
+                120
+                نتحقق مرة اخرى ان كان عمره فوق 
+                18
+                سنة
+                في تلك الحالة سوف يدفع 
+                12
+                دولار 
+                والا سوف يدفع 
+                7
+                دولار 
+                اما اذا لم يتحقق الشرط الاول فسوف يذهب مباشرة الى 
+                عبارة 
+                else 
+                الخارجية 
+                وسوف يخبره انه لايستطيع ان يركب 
+            </p>
+            <pre><code>
+print("Welcome to the rollercoaster")
+height = int(input("What is your height in cm: "))
+
+if height >= 120:
+    print("You can ride the rollercoaster!")
+    age = int(input("What is your age?: "))
+    if age <= 18:
+        print("Please pay 7$.")
+    else:
+        print("Please pay 12$.")
+else:
+    print("Sorry, you have to grow taller before you can ride.")
+            </code></pre>
+            <p>
+                اريد ان انوه مجددا على اهمية الفراغ في بداية كل سطر داخل عبارة 
+                if else 
+                لاننا بذلك نحدد بانها تابعة لها ولن تنفذ الا اذا تحقق الشرط
+            </p>
+            <p>
+                لقد طلب منا التعديل على البرنامج بحيث اذا كان عمر الشخص اقل من 
+                12
+                سوف يدفع فقط 
+                5
+                دولار 
+                اما اذا كان بين 
+                12
+                و 
+                18
+                سوف يدفع 7
+                دولار 
+                اما ان كان فوق 
+                18
+                سوف يدفع 
+                12
+                دولار 
+            </p>
+            <p>
+                الان لدينا ثلاث احتمالات اذن كيف نمثلها باستعمال العبارات الشرطية؟ 
+                يمكننا استعمال نوع جديد وهو 
+                if elif else 
+                بحيث في عبارة 
+                if else 
+                نحن نتحقق من شرط واحد اما 
+                في عبارة 
+                if elif else 
+                نستطيع التحقق من اكثر من شرط بالقدر الذي نريد هكذا: 
+            </p>
+            <pre><code>
+if condition:
+    do this
+elif condition2:
+    do this 
+else: 
+    do this
+            </code></pre>
+            <p>
+                بحيث نتحقق من الشطر الاول فان لم يتحقق سوف ننتقل الى الشرط الثاني 
+                فان لم يتحقق ننتقل الى الشرط الثالث وهكذا ونستطيع اضافة عبارة 
+                else 
+                في الاخير
+            </p>
+            <p>
+                الان يمكننا تمثيل متطلبات البرنامج الجديدة هكذا: 
+            </p>
+            <pre><code>
+print("Welcome to the rollercoaster")
+height = int(input("What is your height in cm: "))
+
+if height >= 120:
+    print("You can ride the rollercoaster!")
+    age = int(input("What is your age?: "))
+    if age < 12:
+        print("Please pay 5$.")
+    elif age <= 18:
+        print("Please pay 7$.")
+    else:
+        print("Please pay 12$.")
+else:
+    print("Sorry, you have to grow taller before you can ride.")
+            </code></pre>
+            <p>
+                وتذكر انه يمكنك استعمال العدد الذي تريد من عبارات 
+                elif 
+                بين 
+                if 
+                و 
+                else.
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
