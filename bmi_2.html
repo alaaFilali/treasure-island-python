@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>
+        تمرين حساب
+        bmi
+        النسخة الثانية
+    </title>
+</head>
+
+<body>
+    <div class="book-page">
+        <h1 class="book-title">
+            تمرين حساب
+            bmi
+            النسخة الثانية
+        </h1>
+        <div class="content">
+            <p>
+                التعليمات: 
+            </p>
+            <p>
+                اكتب برنامج يحسب 
+                bmi 
+                مؤشر كتلة الجسم ثم يخبر المستخدم عن معناه او على ماذا يدل
+                بناءا على التالي: 
+            </p>
+            <ul>
+                <li>
+                    <p>
+                        تحت 18.5 underweight
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        فوق 18.5 وتحت 25 weight normal
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        فوق 25 وتحت 30 overweight
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        فوق 30 وتحت 35 obese
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        فوق
+                        35
+                        clinically obese 
+                    </p>
+                </li>
+            </ul>
+            <p>
+                نتيجة البرنامج النهائية سوف تكون كالتالي: 
+                بناءا على طول الشخص ووزنه سوف يحسب ال 
+                bmi 
+                ثم بناءا عليه سوف يضهر رسالة مختلفة في كل مرة
+            </p>
+            <pre><code>
+enter your height in m: 1.75
+enter your weight in kg: 80
+You BMI is 28, you are overweight.
+            </code></pre>
+            <p>
+                تذكر ان لحساب ال 
+                bmi 
+                نستعمل المعادلة 
+                الوزن بالكغ على الطول بالمتر مربع ثم ندور العدد 
+            </p>
+            <p>
+                اليك هذه الاسطر لكي تبدأ منها وحظ موفق في حل التمرين.
+            </p>
+            <pre><code>
+height = float(input("enter your height in m: "))
+weight = float(input("enter your weight in kg: "))
+            </code></pre>
+            <p>
+                الحل: 
+            </p>
+            <p>
+                اولا نحسب ال 
+                bmi 
+                ثم نقوم بتدويره الى الوحدة باستعمال دالة 
+                round
+            </p>
+            <pre><code>
+bmi = round(weight / height ** 2)
+            </code></pre>
+            <p>
+                ثم سوف اظهر رسالة بناءا على نتيجة ال 
+                bmi 
+                المتحصل عليها
+            </p>
+            <pre><code>
+if bmi < 18.5:
+    print(f"Your BMI is {bmi}, you are underweight.")
+            </code></pre>
+            <p>
+                الان ماذا لو كان ال
+                bmi 
+                اكبر من 
+                18.5
+                ولكن اقل من 
+                25
+                اذن بما انني تحقق من انها اقل من 
+                18.5
+                ولم يتحقق الشرط اذن لن احتاج الى ان اتحقق مجددا من شرط 
+                انه اقل من 
+                18.5
+                بل مباشرة اتحقق ما ان كان اقل من 
+                25
+                داخل عبارة 
+                elif 
+                هكذا: 
+            </p>
+            <pre><code>
+if bmi < 18.5:
+    print(f"Your BMI is {bmi}, you are underweight.")
+elif bmi < 25:
+    print(f"Your BMI is {bmi}, you have a normal weight.")
+            </code></pre>
+            <p>
+                وبنفس الطريقة مع باقي الحالات: 
+            </p>
+            <pre><code>
+height = float(input("enter your height in m: "))
+weight = float(input("enter your weight in kg: "))
+
+bmi = round(weight / height ** 2)
+
+if bmi < 18.5:
+    print(f"Your BMI is {bmi}, you are underweight.")
+elif bmi < 25:
+    print(f"Your BMI is {bmi}, you have a normal weight.")
+elif bmi < 30:
+    print(f"Your BMI is {bmi}, you are overweight.")
+elif bmi < 35:
+    print(f"Your BMI is {bmi}, you are obese.")
+else:
+    print(f"Your BMI is {bmi}, you are clinically obese.")
+            </code></pre>
+        </div>
+    </div>
+</body>
+
+</html>
