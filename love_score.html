@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>
+        تمرين حساب ال
+        love score
+    </title>
+</head>
+
+<body>
+    <div class="book-page">
+        <h1 class="book-title">
+            تمرين حساب ال
+            love score
+        </h1>
+        <div class="content">
+            <p>
+                التعليمات: 
+            </p>
+            <p>
+                اكتب برنامج يقوم بحساب ال 
+                love score 
+                بين شخصين باستخدام طريقة 
+                BuzzFeed
+            </p>
+            <p>
+                والطريقة كالتالي: خذ الاسمين معا واحسب عدد مرات ظهور احرف الكلمة 
+                True
+                ثم تحقق من عدد مرات ظهور حروف الكلمة 
+                Love
+                قم قم بلصق هذين الرقمين لتحصل على عدد من رقمين
+            </p>
+            <p>
+                لل 
+                score 
+                اقل من 
+                10
+                او اكبر من 
+                90
+                سوف نظهر هذه الرسالة 
+            </p>
+            <pre><code>
+Your score is X, you go together like coke and mentos.
+            </code></pre>
+            <p>
+                اما لل 
+                score 
+                بين 
+                40
+                و 
+                50
+                سوف نظهر هذه الرسالة
+            </p>
+            <pre><code>
+Your score is Y, you are alright together.
+            </code></pre>
+            <p>
+                وفي الحالات الاخرى
+            </p>
+            <pre><code>
+Your score is Z.
+            </code></pre>
+            <p>
+                مثال : اسم الشخص الاول هو 
+                Arianna Rebolini
+                والشخص الثاني اسمه
+                Channing Tatum
+                عدد مرات ظهور الحروف في كلمة 
+                True
+                في الاسمين معا
+                هي 
+                6
+                اما عدد مرات ظهور حروف الكلمة 
+                love 
+                في الاسمين معا هي  
+                3
+                اذن ال 
+                love score 
+                لهذين الشخصين هو 
+                63
+            </p>
+            <p>
+                لكي تستطيع حساب عدد مرات ظهور حرف ما في كلمة ما يجب عليك ان تعرف
+                دالتين مهمتين وهما 
+                lower 
+                و 
+                count
+                والاولى سوف ترجع جميع حروف ال 
+                string 
+                المعطى لها ال حروف صغيرة
+            </p>
+            <pre><code>
+print("Alaa".lower())
+            </code></pre>
+            <pre><code>
+alaa
+            </code></pre>
+            <p>
+                اما الدالة الثانية سوف تحسب عدد مرات ظهور حرف ما في ال 
+                string 
+                المعطى لها 
+                مع الحرف الذي تريد حساب مرات ظهوره
+            </p>
+            <pre><code>
+print("Alaa".count("a"))
+            </code></pre>
+            <pre><code>
+2
+            </code></pre>
+            <p>
+                قال لي ان هنا حرفين 
+                a
+                رغم انه هناك ثلاث حروف 
+                a 
+                ولكن واحد فيهم هو حرف كبير 
+                وهنا تأتي اهمية الدالة 
+                lower
+            </p>
+            <pre><code>
+print("Alaa".lower().count("a"))
+            </code></pre>
+            <pre><code>
+3
+            </code></pre>
+            <p>
+                هذه هي النتيجة النهائية للبرنامج: 
+            </p>
+            <pre><code>
+Welcome to the Love Calculator!
+What is your name? Kanye west
+What is their name? kim Kardashian 
+Your score is 42, you are alright together.
+            </code></pre>
+            <p>
+                اليك بعض الكود لكي تبدأ منه وحظا موفقا في حل التمرين: 
+            </p>
+            <pre><code>
+print("Welcome to the Love Calculator!")
+name1 = input("What is your name? ")
+name2 = input("What is their name? ")
+            </code></pre>
+            <p>
+                الحل:
+            </p>
+            <p>
+                اول شيء سوف نقوم به هو حساب ال
+                love score
+                ولفعل ذلك علينا ان نحسب عدد مرات ظهور احرف معينة في الاسمين معا
+                اذا من الافضل جمع الاسمين في اسم واحد ونعاملهم كانهم 
+                string 
+                واحد 
+            </p>
+            <pre><code>
+combined_string = name1 + name2
+            </code></pre>
+            <p>
+                وسوف نحوله الى حروف صغيرة حتى نتفادى المشكل الذي اريتكم سابقا
+            </p>
+            <pre><code>
+lower_case_string = combined_string.lower()
+            </code></pre>
+            <p>
+                ثم سوف نحسب عدد مرات ظهور حروف الكلمة 
+                True 
+                في الاسمين
+            </p>
+            <pre><code>
+t = lower_case_string.count("t")
+r = lower_case_string.count("r")
+u = lower_case_string.count("u")
+e = lower_case_string.count("e")
+            </code></pre>
+            <p>
+                ثم نجمعهم مع بعض في متغير واحد
+            </p>
+            <pre><code>
+true = t + r + u + e
+            </code></pre>
+            <p>
+                ثم سنفعل الشيء نفسه مع حروف الكلمة 
+                love
+            </p>
+            <pre><code>
+l = lower_case_string.count("l")
+o = lower_case_string.count("o")
+v = lower_case_string.count("v")
+e = lower_case_string.count("e")
+
+love = l + o + v + e
+            </code></pre>
+            <p>
+                الان ال 
+                love score 
+                سوف يكون لصق العددين وليس جمعهما ولفعل ذلك سوف نحولها الى 
+                string
+                ثم الى 
+                int 
+                مرة اخرى
+                لكي يتسنى لنا عمل المقارنة فيما بعد
+            </p>
+            <pre><code>
+love_score = int(str(true) + str(love))
+            </code></pre>
+            <p>
+                الان كل ماتبقى هو اظهار رسالة على حسب ال 
+                love score 
+                باستخدام عبارة شرطية
+            </p>
+            <pre><code>
+if love_score < 10 or love_score > 90:
+    print(f"Your score is {love_score}, you go together like coke and mentos.")
+elif love_score >= 40 and love_score <= 50:
+    print(f"Your score is {love_score}, you are alright together.")
+else:
+    print(f"Your score is {love_score}")
+            </code></pre>
+            <p>
+                الكود كاملا: 
+            </p>
+            <pre><code>
+print("Welcome to the Love Calculator!")
+name1 = input("What is your name? ")
+name2 = input("What is their name? ")
+
+combined_string = name1 + name2
+lower_case_string = combined_string.lower()
+
+t = lower_case_string.count("t")
+r = lower_case_string.count("r")
+u = lower_case_string.count("u")
+e = lower_case_string.count("e")
+true = t + r + u + e
+
+l = lower_case_string.count("l")
+o = lower_case_string.count("o")
+v = lower_case_string.count("v")
+e = lower_case_string.count("e")
+love = l + o + v + e
+
+love_score = int(str(true) + str(love))
+
+if love_score < 10 or love_score > 90:
+    print(f"Your score is {love_score}, you go together like coke and mentos.")
+elif love_score >= 40 and love_score <= 50:
+    print(f"Your score is {love_score}, you are alright together.")
+else:
+    print(f"Your score is {love_score}")
+            </code></pre>
+        </div>
+    </div>
+</body>
+
+</html>
