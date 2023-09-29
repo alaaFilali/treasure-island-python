@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>عبارات شرطية متتابعة</title>
+</head>
+
+<body>
+    <div class="book-page">
+        <h1 class="book-title">عبارات شرطية متتابعة</h1>
+        <div class="content">
+            <p>
+                رأينا في الدرس السابق كيف نتحقق من اكثر من شرط عن طريق استخدام 
+                عبارة 
+                if elif else 
+                ولكن في الحقيقة نحن نتحقق من شرط واحد لان في حال تحقق شرط 
+                فسوف يتم تنفيذ التعليمات داخله ولن يتم التحقق من الشروط الاخرى
+                ويتم تجاهلها ولكن ماذا لو اردت ان تتحقق من اكثر من شرط 
+                حتى ولو كانت كل الشروط 
+                True
+                اي سوف يتحقق منها جميعا وفي حالة كانت كلها صحيحة سوف ينفذ كل 
+                التعليمات داخل كل شرط 
+            </p>
+            <p>
+                سوف نعود الى مثال برنامج بيع تذاكر ركوب الافعوانة فعندما يركب الشخص 
+                ربما يريد ان يأخذ صورة للذكرى لذلك سوف نسألهم ان كانو يريدون تذكرة 
+                + 
+                اخذ صورة وسوف يدفعون 
+                3
+                دولار اضافية,
+                كما ترون هذا الشرط منفصل تماما عن شرط الطول والعمر بل هذا شرط اضافي 
+                فان كانت الاجابة نعم سوف نضيف 
+                3
+                دولار للتكلفة ولفعل ذلك نستعمل عبارات شرطية متتابعة 
+            </p>
+            <pre><code>
+if condition1:
+    do A
+if condition2:
+    do B
+if condition3:
+    do C
+            </code></pre>
+            <p>
+                فاذا تحققت كل الشروط سوف ينفذ كل التعليمات اما في حالة عبارة 
+                if elif else 
+                سوف ينفذ فقط التعليمات داخل اول شرط متحقق 
+            </p>
+            <p>
+                هذا هو الكود من الدرس السابق: 
+            </p>
+            <pre><code>
+print("Welcome to the rollercoaster")
+height = int(input("What is your height in cm: "))
+
+if height >= 120:
+    print("You can ride the rollercoaster!")
+    age = int(input("What is your age?: "))
+    if age < 12:
+        print("Please pay 5$.")
+    elif age <= 18:
+        print("Please pay 7$.")
+    else:
+        print("Please pay 12$.")
+else:
+    print("Sorry, you have to grow taller before you can ride.")
+            </code></pre>
+            <p>
+                بعد ان نحدد سعر التذكرة سوف نسأله ان كان يريد صورة للذكرى او لا؟ 
+                وعلى حسب الاجابة سوف نضيف 
+                3
+                دولار للتكلفة. 
+                سوف اضيف الشرط في نفس المستوى مع شرط العمر وسوف اغير الرسائل 
+                حتى تخبر الشخص سعر التذكرة
+            </p>
+            <pre><code>
+print("Welcome to the rollercoaster")
+height = int(input("What is your height in cm: "))
+
+if height >= 120:
+    print("You can ride the rollercoaster!")
+    age = int(input("What is your age?: "))
+    if age < 12:
+        print("Child tickets are 5$.")
+    elif age <= 18:
+        print("Youth tickets are 7$.")
+    else:
+        print("Adult tickets are 12$.")
+    
+    wants_photo = input("Do you want a photo taken? Y on N. ")
+    if wants_photo == "Y":
+        # Add $3 to the bill
+else:
+    print("Sorry, you have to grow taller before you can ride.")
+            </code></pre>
+            <p>
+                ولكن كيف اضيف 
+                3
+                دولار للفاتورة وليس هناك متغير يحمل قيمة التكلفة 
+                اذن سوف استعمل متغير 
+                bill 
+                وقيمته الابتدائية هي 
+                0
+                وبالاضافة الى طباعة سعر التذكرة سوف اجعله قيمة المتغير 
+                bill
+            </p>
+            <pre><code>
+print("Welcome to the rollercoaster")
+height = int(input("What is your height in cm: "))
+bill = 0
+
+if height >= 120:
+    print("You can ride the rollercoaster!")
+    age = int(input("What is your age?: "))
+    if age < 12:
+        bill = 5
+        print("Child tickets are 5$.")
+    elif age <= 18:
+        bill = 7
+        print("Youth tickets are 7$.")
+    else:
+        bill = 12
+        print("Adult tickets are 12$.")
+    
+    wants_photo = input("Do you want a photo taken? Y on N. ")
+    if wants_photo == "Y":
+        # Add $3 to the bill
+else:
+    print("Sorry, you have to grow taller before you can ride.")
+            </code></pre>
+            <p>
+                والان المتغير 
+                bill 
+                اما يأخذ قيمة 
+                5
+                او 
+                7
+                او 
+                12
+                وعندما يصل الى شرط اخذ الصورة اما اضيف 
+                3
+                دولار او لا افعل شيئا وسوف تبقى التكلفة هي قيمة التذكرة
+            </p>
+            <pre><code>
+print("Welcome to the rollercoaster")
+height = int(input("What is your height in cm: "))
+bill = 0
+
+if height >= 120:
+    print("You can ride the rollercoaster!")
+    age = int(input("What is your age?: "))
+    if age < 12:
+        bill = 5
+        print("Child tickets are 5$.")
+    elif age <= 18:
+        bill = 7
+        print("Youth tickets are 7$.")
+    else:
+        bill = 12
+        print("Adult tickets are 12$.")
+    
+    wants_photo = input("Do you want a photo taken? Y on N. ")
+    if wants_photo == "Y":
+        bill += 3
+
+    print(f"Your final bill is ${bill}")
+else:
+    print("Sorry, you have to grow taller before you can ride.")
+            </code></pre>
+            <p>
+                لاحظ هنا ان اضافة 
+                3
+                للمتغير 
+                bill 
+                تمت اضافة فراغ قبله لانه داخل عبارة الشرط اي انه لن يتم تنفيذه 
+                الا اذا تحقق الشرط اما طباعة التكلفة النهائية هي خارج عبارة 
+                if 
+                اي انها سوف تنفذ بعد تنفيذ عبارة الشرط بدون شرط عليها
+            </p>
+            <p>
+                وهذه هي النتيجة النهائية للبرنامج: 
+            </p>
+            <pre><code>
+Welcome to the rollercoaster
+What is your height in cm: 180
+You can ride the rollercoaster!
+What is your age?: 21
+Adult tickets are 12$.
+Do you want a photo taken? Y on N. Y
+Your final bill is $15
+            </code></pre>
+            <p>
+                سؤال الشخص ان كان يريد صورة مهما كان نوع تذكرته فهو منفصل عن شرط العمر 
+                وفي الدرس القادم لدي تمرين لك لكي تحاول استعمال ماتعلمته اليوم في حله.
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
