@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>برنامج طلب البيتزا</title>
+</head>
+
+<body>
+    <div class="book-page">
+        <h1 class="book-title">برنامج طلب البيتزا</h1>
+        <div class="content">
+            <p>
+                التعليمات: 
+            </p>
+            <p>
+                اكتب برنامج بقوم بأتمتة عملية بيع البيتزا.
+            </p>
+            <p>
+                بناءا على طلب المستخدم احسب الفاتورة النهائية له:
+            </p>
+            <ul>
+                <li>
+                    <p>
+                        البيتزا الصغيرة 
+                        15
+                        دولار
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        البيتزا المتوسطة 
+                        20
+                        دولار
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        البيتزا الكبيرة 
+                        25
+                        دولار
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        اضافة 
+                        pepperoni 
+                        للبيتزا الصغيرة زيادة 
+                        2
+                        دولار
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        اضافة 
+                        pepperoni 
+                        للبيتزا المتوسطة والكبيرة زيادة 
+                        3
+                        دولار
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        زيادة الجبنة لاي نوع بيتزا زيادة 
+                        1
+                        دولار
+                    </p>
+                </li>
+            </ul>
+            <p>
+                انواع البيتزا تمثل بالاحرف 
+                S 
+                للصغيرة و 
+                M 
+                للمتوسطة و 
+                L 
+                للكبيرة 
+                وان كان يريد اضافة 
+                pepperoni 
+                او الجبنة سوف يدخل اما 
+                Y 
+                لنعم 
+                او 
+                N 
+                للا
+            </p>
+            <p>
+                والنتيجة النهائية للبرنامج سوف تكون كالتالي: 
+            </p>
+            <pre><code>
+Welcome to Python Pizza Deliveries!
+What size pizza do you want? S, M or L: M
+Do you want pepperoni? Y or N: Y 
+Do you want extra cheese? Y or N: Y
+Your final bill is $24
+            </code></pre>
+            <p>
+                اليك هذه الاسطر كبداية وحظا موفقا في حل التمرين.
+            </p>
+            <pre><code>
+print("Welcome to Python Pizza Deliveries!")
+size = input("What size pizza do you want? S, M or L: ")
+add_pepperoni = input("Do you want pepperoni? Y or N: ")
+extra_cheese = input("Do you want extra cheese? Y or N: ")
+            </code></pre>
+            <p>
+                الحل: 
+            </p>
+            <p>
+                اولا سوف نتحقق من نوع البيتزا التي اختارها وسوف اتتبع الفاتورة في متغير 
+                اعرفه من قبل
+            </p>
+            <pre><code>
+bill = 0
+
+if size == "S":
+    bill = 15
+elif size == "M":
+    bill = 20
+else:
+    bill = 25
+            </code></pre>
+            <p>
+                والان سوف نتحقق ان كان يريد اضافة 
+                peperroni 
+                اول لا
+                فان كانت الاجابة 
+                نعم 
+                سوف نتحقق من نوع البيتزا لان السعر مختلف 
+            </p>
+            <pre><code>
+if add_pepperoni == "Y":
+    if size == "S":
+        bill += 2
+    else:
+        bill += 3
+            </code></pre>
+            <p>
+                واخيرا سوف نتحقق ان كان يريد اضافة جبنة اضافية
+            </p>
+            <pre><code>
+if extra_cheese == "Y":
+    bill += 1
+            </code></pre>
+            <p>
+                وفي الاخير اقوم بطباعة الفاتورة النهائية: 
+            </p>
+            <pre><code>
+print("Welcome to Python Pizza Deliveries!")
+size = input("What size pizza do you want? S, M or L: ")
+add_pepperoni = input("Do you want pepperoni? Y or N: ")
+extra_cheese = input("Do you want extra cheese? Y or N: ")
+
+bill = 0
+
+if size == "S":
+    bill = 15
+elif size == "M":
+    bill = 20
+else:
+    bill = 25
+
+if add_pepperoni == "Y":
+    if size == "S":
+        bill += 2
+    else:
+        bill += 3
+
+if extra_cheese == "Y":
+    bill += 1
+
+print(f"Your final bill is ${bill}")
+            </code></pre>
+        </div>
+    </div>
+</body>
+
+</html>
