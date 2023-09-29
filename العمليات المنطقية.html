@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>العمليات المنطقية</title>
+</head>
+
+<body>
+    <div class="book-page">
+        <h1 class="book-title">العمليات المنطقية</h1>
+        <div class="content">
+            <p>
+                حتى الان رأينا انواع كثيرة من العبارات الشرطية ومختلف استخداماتها
+                ولكن مالم نراه حتى الان هو التحقق من اكثر من شرط في سطر واحد 
+                بحيث نجمع اكثر من شرط في شرط واحد مثلا في برنامج بيع البيتزا نريد ان 
+                نسأل هل يريد الزبون بيتزا كبيرة و اضافة بيبيروني و اضافة جبنة مرة واحدة 
+                في نفس السطر البرمجي ولفعل ذلك علينا ان نتعلم حول العمليات المنطقية وهناك 
+                ثلاث انواع منها
+            </p>
+            <ul>
+                <li>
+                    <p>
+                        A and B
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        C or D
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        not E
+                    </p>
+                </li>
+            </ul>
+            <p>
+                في الاولى لكي يعتبر الشرط متحققا يجب ان بتحقق الشرط 
+                A 
+                و 
+                B 
+                معا اي كلاهما يجب ان يكون 
+                True
+                اما كان واحد فيهما ليس 
+                True 
+                اي الشرط كله 
+                False
+            </p>
+            <p>
+                مثال: لدي متغير 
+                a 
+                يحمل قيمة 
+                12
+                واريد ان اتحقق هل 
+                a 
+                اكبر من 
+                15
+                والنتيجة طبعا هي 
+                False 
+                الان ماذا عن 
+                هل 
+                a 
+                اكبر من
+                10
+                والاجابة هي 
+                True
+                فلو جمعت الشرطين في شرط واحد باستعمال 
+                and 
+                هذه هي النتيجة: 
+            </p>
+            <pre><code>
+a = 12
+print( a > 15 and a > 10 )
+            </code></pre>
+            <pre><code>
+False
+            </code></pre>
+            <p>
+                اما لو كان كلا الشرطين متحققين
+            </p>
+            <pre><code>
+a = 12
+print( a > 9 and a > 10 )
+            </code></pre>
+            <pre><code>
+True
+            </code></pre>
+            <p>
+                الان ماذا لو اردت فقط احد الشرطين ان يتحقق في تلك الحالة يمكنك استعمال 
+                or
+            </p>
+            <pre><code>
+a = 12
+print( a > 15 or a > 10 )
+            </code></pre>
+            <pre><code>
+True
+            </code></pre>
+            <p>
+                وفقط في حالة ان الشرطين الاثنين لم يتحققا في تلك الحالة فالنتيجة هي 
+                False
+            </p>
+            <pre><code>
+a = 12
+print( a > 15 or a < 10 )
+            </code></pre>
+            <pre><code>
+False
+            </code></pre>
+            <p>
+                واخر عملية هي 
+                not 
+                وماتفعله هو قلب قيمة الشرط فان كان 
+                True 
+                يصبح 
+                False
+                والعكس
+            </p>
+            <pre><code>
+a = 12
+print( not a > 15 )
+            </code></pre>
+            <pre><code>
+True
+            </code></pre>
+            <p>
+                عودة الى مثال بائع تذاكر الافعوانة قررت الشركة ان تعطي تذاكر مجانية لكل 
+                شخص عمره بين 
+                45
+                و 
+                55
+            </p>
+            <p>
+                هذا الكود السابق وسوف نغيره ليصبح سعر تذكرة الناس التي عمرها بين 
+                45
+                و 
+                55
+                هو 
+                0
+                دولار ولكن ان ارادو صورة عليهم ان يدفعو 
+                3
+                دولار
+            </p>
+            <pre><code>
+print("Welcome to the rollercoaster")
+height = int(input("What is your height in cm: "))
+bill = 0
+
+if height >= 120:
+    print("You can ride the rollercoaster!")
+    age = int(input("What is your age?: "))
+    if age < 12:
+        bill = 5
+        print("Child tickets are 5$.")
+    elif age <= 18:
+        bill = 7
+        print("Youth tickets are 7$.")
+    else:
+        bill = 12
+        print("Adult tickets are 12$.")
+    
+    wants_photo = input("Do you want a photo taken? Y on N. ")
+    if wants_photo == "Y":
+        bill += 3
+
+    print(f"Your final bill is ${bill}")
+else:
+    print("Sorry, you have to grow taller before you can ride.")
+            </code></pre>
+            <p>
+                سوف نضيف عبارة 
+                elif 
+                اخرى لشرط العمر
+                وباستخدام عملية 
+                and 
+                سوف نتحقق من ان عمر الشخص بين 
+                45
+                و 
+                55
+                ولن نحتاج الى تحديث قيمة الفاتوة لان قيمته الابتدائية هي 
+                0
+            </p>
+            <pre><code>
+...
+    if age < 12:
+        bill = 5
+        print("Child tickets are 5$.")
+    elif age <= 18:
+        bill = 7
+        print("Youth tickets are 7$.")
+    elif age >= 45 and age <= 55:
+        print("Have a free ride on us!")
+    else:
+        bill = 12
+        print("Adult tickets are 12$.")
+...
+            </code></pre>
+        </div>
+    </div>
+</body>
+
+</html>
